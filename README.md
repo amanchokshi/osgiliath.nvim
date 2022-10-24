@@ -1,5 +1,5 @@
 # osgiliath
-Neovim Setup - The Citadel of Stars
+The Citadel of Stars : My Neovim Setup
 
 ------------------------
 ![osgiliath](docs/banner.jpg)
