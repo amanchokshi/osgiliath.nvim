@@ -121,7 +121,11 @@ return packer.startup(function(use)
 	-- Toggleterm
 	use("akinsho/toggleterm.nvim")
 
-    -- Zen Mode
+	-- Scroll Bar
+	use({ "kevinhwang91/nvim-hlslens" })
+	use({ "petertriho/nvim-scrollbar" })
+
+	-- Zen Mode
 	use("folke/zen-mode.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
