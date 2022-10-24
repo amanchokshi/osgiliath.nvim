@@ -8,6 +8,12 @@ scroll.setup({
 		"prompt",
 		"TelescopePrompt",
 		"tex",
+        "startify",
+        "dashboard",
+        "packer",
+        "neogitstatus",
+        "NvimTree",
+        "Trouble",
 	},
 })
 require("hlslens").setup({
