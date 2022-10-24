@@ -77,9 +77,9 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
 	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+	use("glepnir/lspsaga.nvim") -- enhanced lsp uis
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
-	use({ "RRethy/vim-illuminate" }) -- highlighting other uses of the word under the cursor
+	use("RRethy/vim-illuminate") -- highlighting other uses of the word under the cursor
 	use("j-hui/fidget.nvim") -- nvim-lsp progress
 
 	-- Formatting & Linting
@@ -122,8 +122,8 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 
 	-- Scroll Bar
-	use({ "kevinhwang91/nvim-hlslens" })
-	use({ "petertriho/nvim-scrollbar" })
+	use("kevinhwang91/nvim-hlslens")
+	use("petertriho/nvim-scrollbar")
 
 	-- Zen Mode
 	use("folke/zen-mode.nvim")
