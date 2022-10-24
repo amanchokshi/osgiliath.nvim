@@ -159,9 +159,10 @@ local mappings = {
 	},
 
 	w = {
-		name = "Spell Check",
+		name = "Writing",
 		s = { "<cmd>set spell<cr>", "Enable Spell Check" },
 		S = { "<cmd>set nospell<cr>", "Disable Spell Check" },
+		z = { "<cmd>ZenMode<cr>", "Toggle Zen Mode" },
 	},
 
 	T = {
