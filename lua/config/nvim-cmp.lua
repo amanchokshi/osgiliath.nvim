@@ -136,20 +136,21 @@ cmp.setup.filetype({ "tex", "help" }, {
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
-				luasnip = "[Snippet]",
-				path = "[Path]",
-				latex_symbols = "[Tex]",
 				nvim_lsp = "[LSP]",
+				luasnip = "[Snippet]",
+				latex_symbols = "[Tex]",
+				path = "[Path]",
 				buffer = "[Buffer]",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
-		{ name = "luasnip" },
-		{ name = "path" },
-		{ name = "latex_symbols" },
-		{ name = "nvim_lsp" },
+		{ name = "omni", priority_weight = 1 },
+		{ name = "nvim_lsp", priority_weight = 7 },
+		{ name = "luasnip", priority_weight = 3 },
+		{ name = "latex_symbols", priority_weight = 2 },
+		{ name = "path", priority_weight = 2 },
 		{ name = "buffer" },
 	},
 })
