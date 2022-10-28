@@ -62,8 +62,7 @@ vim.o.backup = false -- This is recommended by coc
 -- }}}
 -- Ignores {{{
 vim.o.wildignore = vim.o.wildignore
-    ..
-    "*.o,*.obj,*.pyc,*.aux,*.blg,*.fls,*.blg,*.fdb_latexmk,*.latexmain,.DS_Store,Session.vim,Project.vim,tags,.tags,.sconsign.dblite,.ccls-cache"
+	.. "*.o,*.obj,*.pyc,*.aux,*.blg,*.fls,*.blg,*.fdb_latexmk,*.latexmain,.DS_Store,Session.vim,Project.vim,tags,.tags,.sconsign.dblite,.ccls-cache"
 vim.o.suffixes = ".bak,.o,.info,.swp,.obj"
 
 -- }}}

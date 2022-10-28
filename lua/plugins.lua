@@ -129,6 +129,10 @@ return packer.startup(function(use)
 	-- Zen Mode
 	use("folke/zen-mode.nvim")
 
+	-- Latex
+	use("lervag/vimtex")
+	use("jbyuki/nabla.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

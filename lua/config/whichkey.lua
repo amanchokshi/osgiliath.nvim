@@ -163,6 +163,7 @@ local mappings = {
 		s = { "<cmd>set spell<cr>", "Enable Spell Check" },
 		S = { "<cmd>set nospell<cr>", "Disable Spell Check" },
 		z = { "<cmd>ZenMode<cr>", "Toggle Zen Mode" },
+		n = { "<cmd><cr>", "Nabla Tex Equations" },
 	},
 
 	T = {
