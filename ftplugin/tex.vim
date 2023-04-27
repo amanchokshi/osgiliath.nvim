@@ -17,3 +17,15 @@ setlocal scrolloff=5
 
 " syntax
 hi! link Folded texStyleBold
+set fillchars=fold:\ 
+
+" Returning focus to Neovim after inverse search on macOS
+function! s:TexFocusVim() abort
+  silent execute "!open -a Alacritty"
+  redraw!
+endfunction
+
+augroup vimtex_event_focus
+  au!
+  au User VimtexEventViewReverse call s:TexFocusVim()
+augroup END

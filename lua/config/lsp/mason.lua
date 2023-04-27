@@ -36,7 +36,7 @@ local lsp_servers = {
 	"texlab",
 	"marksman",
 	"pyright",
-	"sumneko_lua",
+	"lua_ls",
 	"vimls",
 	"yamlls",
 }
