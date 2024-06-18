@@ -56,6 +56,7 @@ vim.opt.ttyfast = true -- Faster rendering
 vim.opt.scrolloff = 7 -- Scroll automatically when 3 lines from bottom
 vim.opt.sidescrolloff = 3 -- Scroll automatically when 3 lines from right edge of screen
 vim.opt.signcolumn = 'yes' -- Extra column on left of numbers
+vim.opt.fillchars = { eob = ' ' } -- Hide those ugly ~
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
