@@ -15,7 +15,6 @@ vim.opt.timeoutlen = 300 -- Decrease mapped sequence wait time
 vim.opt.signcolumn = 'yes' -- Keep signcolumn on by default
 vim.opt.errorbells = false -- No error bells of any kind
 vim.opt.shortmess = vim.o.shortmess .. 'c' -- Ignore all "Enter to continue at bottom of screen"
-vim.opt.compatible = false -- No backward compatibility with Vi
 vim.opt.spelllang = 'en_us' -- English language for spell check
 vim.opt.encoding = 'utf-8' -- Encoding type
 vim.opt.autoread = true -- Automatically re-read changed files
@@ -35,8 +34,6 @@ vim.opt.smartcase = true -- Case insensitive search
 vim.opt.inccommand = 'split' -- Preview substitutions live, as you type!
 vim.opt.iskeyword:append '-' -- Hypenated words treated as word text objects
 vim.opt.incsearch = true -- Highlight matches as you type
-vim.opt.hlsearch = true -- Highlight matches
-vim.opt.showmatch = true -- Show matching paterns
 vim.opt.ignorecase = true -- case insensitive search
 vim.opt.smartcase = true -- case sensitive when uc present
 vim.opt.showmatch = true -- Highlight matching brackets
@@ -77,6 +74,8 @@ vim.o.undodir = os.getenv 'HOME' .. '/.nvim_backup/undo'
 -- [[ Ignores ]] {{{
 vim.o.wildignore = vim.o.wildignore
   .. '*.o,*.obj,*.pyc,*.aux,*.blg,*.fls,*.blg,*.fdb_latexmk,*.latexmain,.DS_Store,Session.vim,Project.vim,tags,.tags,.sconsign.dblite,.ccls-cache'
+vim.o.wildignore = vim.o.wildignore
+  .. 'vim.lua,blue.vim,darkblue.vim,delek.vim,desert.vim,elflord.vim,evening.vim,industry.vim,koehler.vim,lunaperche.vim,morning.vim,murphy.vim,pablo.vim,peachpuff.vim,quiet.vim,retrobox.vim,ron.vim,shine.vim,slate.vim,sorbet.vim,torte.vim,wildcharm.vim,zaibatsu.vim,zellner.vim'
 vim.o.suffixes = '.bak,.o,.info,.swp,.obj'
 -- }}}
 
