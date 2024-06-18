@@ -41,9 +41,13 @@ require('lazy').setup {
   -- Autopairs
   require 'osgiliath.plugins.autopairs',
 
+  -- File browsing
+  require 'osgiliath.plugins.neo-tree',
+  require 'osgiliath.plugins.oil',
+  require 'osgiliath.plugins.gx',
+
   -- require 'osgiliath.plugins.debug',
   -- require 'osgiliath.plugins.lint',
-  require 'osgiliath.plugins.neo-tree',
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`

@@ -46,6 +46,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- }}}
 
+-- [[ Oil ]] {{{
+vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+-- }}}
+
 -- Enable folding
 -- vim: set foldmethod=marker:
 -- vim: ts=2 sts=2 sw=2 et
