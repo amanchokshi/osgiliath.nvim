@@ -19,6 +19,7 @@ return {
     'kdheepak/monochrome.nvim',
     'sainnhe/everforest',
     'AlexvZyl/nordic.nvim',
+    'rebelot/kanagawa.nvim',
   },
 
   -- Set default to the epic GRUVBOX
