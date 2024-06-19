@@ -18,6 +18,36 @@ return {
           },
         },
       },
+      {
+        'linrongbin16/lsp-progress.nvim',
+        opts = {
+          spinner = {
+            '⠋',
+            '⠙',
+            '⠹',
+            '⠸',
+            '⠼',
+            '⠴',
+            '⠦',
+            '⠧',
+            '⠇',
+            '⠏',
+          },
+          client_format = function(_, spinner, series_messages)
+            return #series_messages > 0 and (spinner .. ' LSP') or '󱠩 LSP'
+          end,
+          format = function(client_messages)
+            local sign = '󱠩 LSP'
+            if #client_messages > 0 then
+              return table.concat(client_messages)
+            end
+            if #vim.lsp.get_clients() > 0 then
+              return sign
+            end
+            return ' LSP'
+          end,
+        },
+      },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis

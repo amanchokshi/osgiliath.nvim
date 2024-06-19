@@ -35,6 +35,9 @@ require('lazy').setup {
   -- Mini Modules
   require 'osgiliath.plugins.mini',
 
+  -- Feline
+  { 'freddiehaddad/feline.nvim' },
+
   -- The mysterious treesitter
   require 'osgiliath.plugins.treesitter',
 
@@ -49,6 +52,9 @@ require('lazy').setup {
   -- require 'osgiliath.plugins.debug',
   -- require 'osgiliath.plugins.lint',
 }
+
+-- Configure Feline
+require 'osgiliath.plugins.feline'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
