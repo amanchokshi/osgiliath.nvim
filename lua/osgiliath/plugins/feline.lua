@@ -115,52 +115,62 @@ local c = {
       end
       return s
     end,
-    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.yellow },
+    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.orange },
     left_sep = {
       always_visible = true,
       str = separators.slant_right,
-      hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.yellow },
+      hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.orange },
     },
     right_sep = {
       always_visible = true,
       str = separators.slant_right,
-      hl = { fg = gruvboxMaterial.yellow, bg = gruvboxMaterial.bg },
+      hl = { fg = gruvboxMaterial.orange, bg = gruvboxMaterial.bg },
     },
   },
 
-  lsp = {
+  git_added = {
     provider = function()
-      if not lsp.is_lsp_attached() then
-        return '  LSP '
+      local git = require 'feline.providers.git'
+      local branch, _ = git.git_diff_added()
+      local s
+      if #branch > 0 then
+        s = string.format(' %s%s', ' ', branch)
+      else
+        s = string.format(' %s ', '')
       end
-      return string.format(' %s ', require('lsp-progress').progress())
+      return s
     end,
-    hl = function()
-      if not lsp.is_lsp_attached() then
-        return { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.red }
+    hl = { fg = gruvboxMaterial.green, bg = gruvboxMaterial.bg },
+  },
+
+  git_changed = {
+    provider = function()
+      local git = require 'feline.providers.git'
+      local branch, _ = git.git_diff_changed()
+      local s
+      if #branch > 0 then
+        s = string.format(' %s%s', ' ', branch)
+      else
+        s = string.format(' %s ', '')
       end
-      return { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.orange }
+      return s
     end,
-    left_sep = {
-      always_visible = true,
-      str = separators.slant_right,
-      hl = function()
-        if not lsp.is_lsp_attached() then
-          return { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.red }
-        end
-        return { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.orange }
-      end,
-    },
-    right_sep = {
-      always_visible = true,
-      str = separators.slant_right,
-      hl = function()
-        if not lsp.is_lsp_attached() then
-          return { fg = gruvboxMaterial.red, bg = gruvboxMaterial.bg }
-        end
-        return { fg = gruvboxMaterial.orange, bg = gruvboxMaterial.bg }
-      end,
-    },
+    hl = { fg = gruvboxMaterial.yellow, bg = gruvboxMaterial.bg },
+  },
+
+  git_removed = {
+    provider = function()
+      local git = require 'feline.providers.git'
+      local branch, _ = git.git_diff_removed()
+      local s
+      if #branch > 0 then
+        s = string.format(' %s%s', ' ', branch)
+      else
+        s = string.format(' %s ', '')
+      end
+      return s
+    end,
+    hl = { fg = gruvboxMaterial.red, bg = gruvboxMaterial.bg },
   },
 
   -- right
@@ -173,12 +183,16 @@ local c = {
         file_readonly_icon = ' ',
       },
     },
-    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.fg },
-    left_sep = {
+    hl = { fg = gruvboxMaterial.cyan, bg = gruvboxMaterial.bg },
+    right_sep = {
       always_visible = true,
-      str = separators.slant_left,
-      hl = { fg = gruvboxMaterial.fg, bg = gruvboxMaterial.bg },
+      str = separators.block,
     },
+    -- left_sep = {
+    --   always_visible = true,
+    --   str = separators.slant_left,
+    --   hl = { fg = gruvboxMaterial.fg, bg = gruvboxMaterial.yellow },
+    -- },
   },
 
   macro = {
@@ -197,7 +211,7 @@ local c = {
       always_visible = true,
       str = separators.slant_left,
       hl = function()
-        return { fg = gruvboxMaterial.skyblue, bg = gruvboxMaterial.fg }
+        return { fg = gruvboxMaterial.skyblue, bg = gruvboxMaterial.bg }
       end,
     },
   },
@@ -219,7 +233,7 @@ local c = {
       local denominator = math.min(result.total, result.maxcount)
       return string.format(' [%d/%d] ', result.current, denominator)
     end,
-    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.yellow },
+    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.skyblue },
     left_sep = {
       always_visible = true,
       str = separators.slant_left,
@@ -229,23 +243,60 @@ local c = {
     },
   },
 
-  cursor_position = {
-    provider = {
-      name = 'position',
-      opts = { padding = false },
-    },
-    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.orange },
+  lsp = {
+    provider = function()
+      if not lsp.is_lsp_attached() then
+        return '  LSP '
+      end
+      return string.format(' %s ', require('lsp-progress').progress())
+    end,
+    hl = function()
+      if not lsp.is_lsp_attached() then
+        return { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.violet }
+      end
+      return { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.orange }
+    end,
     left_sep = {
       always_visible = true,
-      str = string.format('%s%s', separators.slant_left, separators.block),
+      str = separators.slant_left,
       hl = function()
-        return { fg = gruvboxMaterial.orange, bg = gruvboxMaterial.yellow }
+        if not lsp.is_lsp_attached() then
+          return { bg = gruvboxMaterial.yellow, fg = gruvboxMaterial.violet }
+        end
+        return { bg = gruvboxMaterial.yellow, fg = gruvboxMaterial.orange }
       end,
     },
     right_sep = {
       always_visible = true,
       str = separators.slant_left,
-      hl = { fg = gruvboxMaterial.orange, bg = gruvboxMaterial.orange },
+      hl = function()
+        if not lsp.is_lsp_attached() then
+          return { bg = gruvboxMaterial.violet, fg = gruvboxMaterial.red }
+        end
+        return { bg = gruvboxMaterial.orange, fg = gruvboxMaterial.red }
+      end,
+    },
+  },
+
+  cursor_position = {
+    provider = {
+      name = 'position',
+      opts = { padding = false },
+    },
+    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.red },
+    left_sep = {
+      always_visible = true,
+      str = separators.block,
+      hl = { fg = gruvboxMaterial.red },
+      -- str = string.format('%s%s', separators.slant_left, separators.block),
+      -- hl = function()
+      --   return { fg = gruvboxMaterial.orange, bg = gruvboxMaterial.yellow }
+      -- end,
+    },
+    right_sep = {
+      always_visible = true,
+      str = separators.slant_left,
+      hl = { fg = gruvboxMaterial.red, bg = gruvboxMaterial.red },
     },
   },
 
@@ -254,7 +305,7 @@ local c = {
       name = 'scroll_bar',
       opts = { reverse = true },
     },
-    hl = { fg = gruvboxMaterial.red, bg = gruvboxMaterial.bg },
+    hl = { fg = gruvboxMaterial.skyblue, bg = gruvboxMaterial.bg },
   },
 
   middle = {
@@ -289,13 +340,16 @@ local active = {
     c.vim_status,
     c.vi_mode,
     c.git_branch,
-    c.lsp,
+    c.git_added,
+    c.git_changed,
+    c.git_removed,
     c.middle,
   },
   { -- right
     c.file_name,
     c.macro,
     c.search_count,
+    c.lsp,
     c.cursor_position,
     c.scroll_bar,
   },
