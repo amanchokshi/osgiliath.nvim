@@ -246,7 +246,7 @@ local c = {
   lsp = {
     provider = function()
       if not lsp.is_lsp_attached() then
-        return '  LSP '
+        return ''
       end
       return string.format(' %s ', require('lsp-progress').progress())
     end,
