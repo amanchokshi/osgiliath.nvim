@@ -38,6 +38,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>', { desc = '[N]oice [D]ismiss messages' })
 -- }}}
 
+-- [[ Zen Mode ]] {{{
+vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<CR>', { desc = '[Z]en mode toggle' })
+-- }}}
+
 -- [[ Window Navigation]] {{{
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
