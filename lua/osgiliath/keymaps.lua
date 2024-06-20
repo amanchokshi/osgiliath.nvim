@@ -34,6 +34,10 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- }}}
 
+-- [[ Noice ]] {{{
+vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>', { desc = '[N]oice [D]ismiss messages' })
+-- }}}
+
 -- [[ Window Navigation]] {{{
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows

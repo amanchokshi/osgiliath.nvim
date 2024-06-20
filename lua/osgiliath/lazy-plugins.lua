@@ -51,6 +51,9 @@ require('lazy').setup {
 
   -- require 'osgiliath.plugins.debug',
   -- require 'osgiliath.plugins.lint',
+
+  -- Noice
+  require 'osgiliath.plugins.noice',
 }
 
 -- Configure Feline
