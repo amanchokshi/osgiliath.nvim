@@ -19,6 +19,7 @@ return {
         'markdown',
         'python',
         'rst',
+        'regex',
         'ssh_config',
         'toml',
         'vim',
