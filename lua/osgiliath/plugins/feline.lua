@@ -233,7 +233,7 @@ local c = {
       local denominator = math.min(result.total, result.maxcount)
       return string.format(' [%d/%d] ', result.current, denominator)
     end,
-    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.skyblue },
+    hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.yellow },
     left_sep = {
       always_visible = true,
       str = separators.slant_left,
