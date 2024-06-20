@@ -51,7 +51,6 @@ vim.opt.wrap = false -- No wrap long lines
 vim.opt.laststatus = 2 -- Always display a status line
 vim.opt.cmdheight = 1 -- Command line height
 vim.opt.wildmenu = true -- Visual autocomplete for command menu
-vim.opt.lazyredraw = true -- Faster rendering
 vim.opt.ttyfast = true -- Faster rendering
 vim.opt.scrolloff = 7 -- Scroll automatically when 3 lines from bottom
 vim.opt.sidescrolloff = 3 -- Scroll automatically when 3 lines from right edge of screen
