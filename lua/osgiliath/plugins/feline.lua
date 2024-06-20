@@ -316,9 +316,9 @@ local c = {
   in_file_info = {
     provider = function()
       if vim.api.nvim_buf_get_name(0) ~= '' then
-        return file.file_info({}, { colored_icon = false })
+        return file.file_info({}, { colored_icon = false, file_readonly_icon = ' ' })
       else
-        return file.file_type({}, { colored_icon = false, case = 'lowercase' })
+        return file.file_type({}, { colored_icon = false, case = 'lowercase', file_readonly_icon = ' ' })
       end
     end,
     hl = { fg = gruvboxMaterial.bg, bg = gruvboxMaterial.skyblue },
@@ -357,6 +357,7 @@ local active = {
 
 local inactive = {
   { -- left
+    c.middle,
   },
   { -- right
     c.in_file_info,
