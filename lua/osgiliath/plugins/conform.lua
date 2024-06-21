@@ -1,6 +1,7 @@
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
     lazy = false,
     keys = {
       {
@@ -20,13 +21,21 @@ return {
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         return {
+          async = false,
           timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'ruff' },
+        python = { 'isort', 'black' },
+        -- python = function(bufnr)
+        --   if require('conform').get_formatter_info('ruff_format', bufnr).available then
+        --     return { 'ruff_organize_imports', 'ruff_format', 'ruff_fix' }
+        --   else
+        --     return { 'isort', 'black' }
+        --   end
+        -- end,
         bash = { 'beautysh', 'shellcheck' },
         latex = { 'latexindent' },
         --

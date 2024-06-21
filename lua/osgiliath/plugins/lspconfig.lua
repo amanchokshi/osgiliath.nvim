@@ -51,7 +51,7 @@ return {
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
+      { 'folke/lazydev.nvim', opts = {} },
     },
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
@@ -182,15 +182,30 @@ return {
 
         dockerls = {},
 
+        esbonio = {
+          cmd = { 'esbonio' },
+          init_options = {
+            server = {
+              completion = {
+                preferredInsertBehavior = 'insert',
+              },
+            },
+          },
+        },
+
         jsonls = {},
 
-        remark_ls = {},
-
-        texlab = {},
-
-        yamlls = {},
+        marksman = {},
 
         pyright = {},
+
+        -- ruff = {},
+
+        -- remark_ls = {
+        --   filetypes = { 'md', 'markdown', 'rst', 'txt' },
+        -- },
+
+        texlab = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -206,6 +221,8 @@ return {
             },
           },
         },
+
+        yamlls = {},
       }
 
       require('mason').setup()
@@ -215,10 +232,12 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'ruff',
+        'black',
+        'isort',
         'latexindent',
         'beautysh',
         'shellcheck',
+        -- 'ruff',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
