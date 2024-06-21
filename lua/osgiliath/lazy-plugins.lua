@@ -11,8 +11,8 @@ require('lazy').setup {
   -- Color magic
   require 'osgiliath.plugins.colors',
 
-  -- Git signs
-  require 'osgiliath.plugins.gitsigns',
+  -- Git stuff
+  require 'osgiliath.plugins.git',
 
   -- Which key
   require 'osgiliath.plugins.which-key',

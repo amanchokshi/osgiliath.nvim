@@ -4,6 +4,21 @@
 
 return {
   {
+    'https://github.com/tpope/vim-fugitive',
+  },
+  {
+    'NeogitOrg/neogit',
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
+
+      -- Only one of these is needed, not both.
+      'nvim-telescope/telescope.nvim', -- optional
+      'ibhagwan/fzf-lua', -- optional
+    },
+    config = true,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -12,6 +27,7 @@ return {
         delete = { text = '▎' },
         topdelete = { text = '▎' },
         changedelete = { text = '▎' },
+        untracked = { text = '┆' },
       },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
