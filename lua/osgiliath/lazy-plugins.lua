@@ -31,6 +31,7 @@ require('lazy').setup {
 
   -- Highlight todo, notes, bugs
   require 'osgiliath.plugins.todo',
+  require 'osgiliath.plugins.peek',
 
   -- Mini Modules
   require 'osgiliath.plugins.mini',

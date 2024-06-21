@@ -178,6 +178,8 @@ return {
           },
         },
 
+        deno = {},
+
         dockerls = {},
 
         jsonls = {},

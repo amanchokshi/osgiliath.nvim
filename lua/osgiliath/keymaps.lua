@@ -38,6 +38,11 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>', { desc = '[N]oice [D]ismiss messages' })
 -- }}}
 
+-- [[ Peek ]] {{{
+vim.keymap.set('n', '<leader>po', '<cmd>PeekOpen<CR>', { desc = '[P]eek [O]pen' })
+vim.keymap.set('n', '<leader>pc', '<cmd>PeekClose<CR>', { desc = '[P]eek [C]lose' })
+-- }}}
+
 -- [[ Zen Mode ]] {{{
 vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<CR>', { desc = '[Z]en mode toggle' })
 -- }}}
