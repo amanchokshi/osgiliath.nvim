@@ -19,7 +19,14 @@ return {
     'kdheepak/monochrome.nvim',
     'sainnhe/everforest',
     'AlexvZyl/nordic.nvim',
+    'savq/melange-nvim',
     'rebelot/kanagawa.nvim',
+    {
+      'sho-87/kanagawa-paper.nvim',
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
   },
 
   -- Set default to the epic GRUVBOX
