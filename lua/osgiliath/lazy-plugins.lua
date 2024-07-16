@@ -39,6 +39,9 @@ require('lazy').setup {
   -- Feline
   { 'freddiehaddad/feline.nvim' },
 
+  -- Smart Column
+  require 'osgiliath.plugins.smartcolumn',
+
   -- The mysterious treesitter
   require 'osgiliath.plugins.treesitter',
 
