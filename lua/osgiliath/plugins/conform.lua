@@ -7,7 +7,7 @@ return {
       {
         '<leader>f',
         function()
-          require('conform').format { async = true, lsp_fallback = true }
+          require('conform').format { async = true, lsp_format = 'fallback' }
         end,
         mode = '',
         desc = '[F]ormat buffer',
@@ -29,13 +29,6 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
-        -- python = function(bufnr)
-        --   if require('conform').get_formatter_info('ruff_format', bufnr).available then
-        --     return { 'ruff_organize_imports', 'ruff_format', 'ruff_fix' }
-        --   else
-        --     return { 'isort', 'black' }
-        --   end
-        -- end,
         bash = { 'beautysh', 'shellcheck' },
         latex = { 'latexindent' },
         --
