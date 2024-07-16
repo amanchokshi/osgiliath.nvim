@@ -78,7 +78,7 @@ return {
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-      vim.keymap.set('n', '<leader>sm', '<cmd>Telescope noice<CR>', { desc = '[S]earch [M]essages from Noice' })
+      vim.keymap.set('n', '<leader>nm', '<cmd>Telescope noice<CR>', { desc = '[N]oice [M]essages' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
